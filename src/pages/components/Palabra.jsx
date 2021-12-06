@@ -11,7 +11,7 @@ const palabra = () => {
     
     const onClick2 = () => {
         let palabra = document.getElementById("palabritas").value
-        
+        let palabra2 = String(palabra).toLowerCase()
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
               confirmButton: 'btn btn-success',
@@ -33,7 +33,7 @@ const palabra = () => {
 
               //axios.post("http://localhost:3001/api/nueva-frase",{
               axios.post("https://juego2021ahorcados.herokuapp.com/api/nueva-frase",{
-                  frase: palabra
+                  frase: palabra2
               }).then((respuesta)=>{
                   console.log(respuesta)
               }).catch((err)=>{
